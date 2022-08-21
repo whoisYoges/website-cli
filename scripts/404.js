@@ -18,9 +18,9 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   await delay(350);
-  createText("Hello visitor! Welcome to whoisYoges.eu.org...");
+  createText("<h1 class='redfg'>Error 404</h1><p>The requested page couldn't be found.<br>The page might have been removed or is temporarily unavailable.</p>");
   await delay(700);
-  createText("Type <span class='blue'>help</span> to see list of available commands.<br>Remember that all the commands are case sensitive.");
+  createText("Type <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.");
   new_line();
 }
 
@@ -53,35 +53,21 @@ function removeInput(){
 
 async function getInputValue(){
   const value = document.querySelector("input").value;
-  if(value === "help"){
+  if(value === "cd $HOME"){
     trueValue(value);
-    createText("Available commands: <br><span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>help</span>, <span class='blue'>instagram</span>, <span class='blue'>linkedin</span>, <span class='blue'>resume</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>"); 
+    createText("Returning home...")
+    await delay(750);
+    window.location.replace("https://whoisyoges.eu.org");
   }
-  else if(value === "about"){
+  else if(value === "cd ~"){
     trueValue(value);
-    createText("Hi, I am Yogesh Lamichhane (invalid).")
-    createText("I am just a regular everyday normal guy.")
+    createText("Returning home...")
+    await delay(750);
+    window.location.replace("https://whoisyoges.eu.org");
   }
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
-  }
-  else if(value === "codeberg"){
-    trueValue(value);
-    createText("<i class='fa-brands fa-git-alt white'></i><a href='https://codeberg.org/whoisYoges' target='_blank' rel='noopener noreferrer'> codeberg.org/whoisYoges</a>")
-  }
-  else if(value === "cv"){
-    trueValue(value);
-    createText("<i class='fa-solid fa-file-arrow-up white'></i><a href='https://whoisYoges.eu.org/whoisYoges_resume.pdf' target='_blank' rel='noopener noreferrer'> whoisYoges.eu.org/whoisYoges_resume.pdf</a>")
-  }
-  else if(value === "date"){
-    trueValue(value);
-    currentdate=Date();
-    createText(`<i class="fa-solid fa-calendar-days white"></i> ${currentdate}`)
-  }
-  else if(value === "email"){
-    trueValue(value);
-    createText("<i class='fa-solid fa-envelope white'></i><a href='mailto:hello@yogeshlamichhane.com.np' target='_blank' rel='noopener noreferrer'> hello@yogeshlamichhane.com.np</a>")
   }
   else if(value === "exit"){
     trueValue(value);
@@ -89,40 +75,12 @@ async function getInputValue(){
     await delay(750);
     closeapp();
   }
-  else if(value === "github"){
-    trueValue(value);
-    createText("<i class='fab fa-github white'></i><a href='https://github.com/whoisYoges' target='_blank' rel='noopener noreferrer'> github.com/whoisYoges</a>")
-  }
-  else if(value === "instagram"){
-    trueValue(value);
-    createText("<i class='fab fa-instagram white'></i><a href='https://instagram.com/whoisYoges' target='_blank' rel='noopener noreferrer'> instagram.com/whoisYoges</a>")
-  }
-  else if(value === "linkedin"){
-    trueValue(value);
-    createText("<i class='fab fa-linkedin-in white'></i><a href='https://www.linkedin.com/in/whoisYoges' target='_blank' rel='noopener noreferrer'> linkedin.com/in/whoisYoges</a>")
-  }
-  else if(value === "resume"){
-    trueValue(value);
-    createText("<i class='fa-solid fa-file-arrow-up white'></i><a href='https://whoisYoges.eu.org/whoisYoges_resume.pdf' target='_blank' rel='noopener noreferrer'> whoisYoges.eu.org/whoisYoges_resume.pdf</a>")
-  }
-  else if(value === "twitter"){
-    trueValue(value);
-    createText("<i class='fab fa-twitter white'></i><a href='https://twitter.com/whoisYoges' target='_blank' rel='noopener noreferrer'> twitter.com/whoisYoges</a>")
-  }
-  else if(value === "whoami"){
-    trueValue(value);
-    createText(`<i class="fa-solid fa-user white"></i> guest`)
-  }
-  else if(value === "youtube"){
-    trueValue(value);
-    createText("<i class='fab fa-youtube white'></i><a href='https://www.youtube.com/channel/UCxFduVRp4umo_flSRCnAInQ?sub_confirmation=1' target='_blank' rel='noopener noreferrer'> Zero to Noob Linux</a>")
-  }
   else if(value === ""){
     trueValue(value);
   }
   else{
     falseValue(value);
-    createText(`${value}: command not found<br>Try <span class='blue'>help</span> to get started.`)
+    createText(`${value}: command not found.<br>Type <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.`)
   }
 }
 
