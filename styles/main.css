@@ -187,6 +187,19 @@ input:focus{
 .icone.error{
   color:#ff402e;
 }
+.lsall {
+  display: flex;
+  justify-content: space-between;
+}
+.lstitle {
+  text-align: left;
+  padding-right: 8px;
+}
+.desc {
+  color: #c259f3;
+  text-align: left;
+  width:80%;
+}
 /* cyrillic-ext */
 @font-face {
   font-family: 'JetBrains Mono';

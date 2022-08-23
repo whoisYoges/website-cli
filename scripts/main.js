@@ -16,11 +16,15 @@ app.addEventListener("click", function(event){
   input.focus();
 })
 
+function help() {
+  createText("Type <span class='blue'>ls</span> to see all available commands.<br> Or type <span class='blue'>ls -l</span> to see a list of available commands with their short description.<br>Remember that all the commands are case sensitive.");
+}
+
 async function open_terminal(){
   await delay(350);
   createText("Hello visitor! Welcome to whoisYoges.eu.org...");
   await delay(700);
-  createText("Type <span class='blue'>help</span> to see list of available commands.<br>Remember that all the commands are case sensitive.");
+  createText("Type <span class='blue'>help</span> to get started.<br>Remember that the command is case sensitive.");
   new_line();
 }
 
@@ -53,11 +57,7 @@ function removeInput(){
 
 async function getInputValue(){
   const value = document.querySelector("input").value;
-  if(value === "help"){
-    trueValue(value);
-    createText("Available commands: <br><span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>help</span>, <span class='blue'>instagram</span>, <span class='blue'>linkedin</span>, <span class='blue'>resume</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>"); 
-  }
-  else if(value === "about"){
+  if(value === "about"){
     trueValue(value);
     createText("Hi, I am Yogesh Lamichhane (invalid).")
     createText("I am just a regular everyday normal guy.")
@@ -93,6 +93,10 @@ async function getInputValue(){
     trueValue(value);
     createText("<i class='fab fa-github white'></i><a href='https://github.com/whoisYoges' target='_blank' rel='noopener noreferrer'> github.com/whoisYoges</a>")
   }
+  else if(value === "help"){
+    trueValue(value);
+    help();
+  }
   else if(value === "instagram"){
     trueValue(value);
     createText("<i class='fab fa-instagram white'></i><a href='https://instagram.com/whoisYoges' target='_blank' rel='noopener noreferrer'> instagram.com/whoisYoges</a>")
@@ -100,6 +104,14 @@ async function getInputValue(){
   else if(value === "linkedin"){
     trueValue(value);
     createText("<i class='fab fa-linkedin-in white'></i><a href='https://www.linkedin.com/in/whoisYoges' target='_blank' rel='noopener noreferrer'> linkedin.com/in/whoisYoges</a>")
+  }
+  else if(value === "ls"){
+    trueValue(value);
+    createText("Available commands: <br><span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>help</span>, <span class='blue'>instagram</span>, <span class='blue'>linkedin</span>, <span class='blue'>ls</span>, <span class='blue'>ls -l</span>, <span class='blue'>resume</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>"); 
+  }
+  else if(value === "ls -l"){
+    trueValue(value);
+    createText("Available commands with description: <br> <p class='lsall'><span class='blue lstitle'>about </span> <span class='desc'> short about whoisYoges </span> </p>  <p class='lsall'><span class='blue lstitle'>clear </span>  <span class='desc'> clear the terminal screen </span> </p>  <p class='lsall'><span class='blue lstitle'>codeberg </span>  <span class='desc'> link to my personal projects git repo </span> </p> <p class='lsall'><span class='blue lstitle'>cv </span>  <span class='desc'> link to my cv </span> </p> <p class='lsall'><span class='blue lstitle'>date </span>  <span class='desc'> current date </span> </p> <p class='lsall'><span class='blue lstitle'>email </span>  <span class='desc'> email address to contact me </span> </p> <p class='lsall'><span class='blue lstitle'>exit </span>  <span class='desc'> exit from the terminal </span> </p> <p class='lsall'><span class='blue lstitle'>github </span>  <span class='desc'> link to my work projects git repo </span> </p> <p class='lsall'><span class='blue lstitle'>help </span>  <span class='desc'> show help text to get started with this site </span> </p> <p class='lsall'><span class='blue lstitle'>instagram </span>  <span class='desc'> link to my instagram profile </span> </p> <p class='lsall'><span class='blue lstitle'>linkedin </span>  <span class='desc'> link to my linkedin profile </span> </p> <p class='lsall'><span class='blue lstitle'>ls </span>  <span class='desc'> list all the available commands in this site </span> </p> <p class='lsall'><span class='blue lstitle'>resume </span>  <span class='desc'> link to my resume </span> </p> <p class='lsall'><span class='blue lstitle'>twitter </span>  <span class='desc'> link to my twitter profile </span> </p> <p class='lsall'><span class='blue lstitle'>whoami </span>  <span class='desc'> who are you? </span> </p> <p class='lsall'><span class='blue lstitle'>youtube </span>  <span class='desc'> link to my youtube profile"); 
   }
   else if(value === "resume"){
     trueValue(value);
