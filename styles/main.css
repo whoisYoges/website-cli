@@ -28,9 +28,11 @@
 .blue { color: #9CEAF3;}
 .gold { color: gold;}
 .redfg { color: red;}
+.greenfg { color: #00ef00;}
 
 .red { background-color: #F5544D; }
 .yellow { background-color: #FABD2F; }
+.green { background-color: #00ef00;}
 
 a{
   text-decoration: none;
@@ -91,6 +93,11 @@ div .title{
   display:flex;
   flex-direction: row;
 }
+@media (max-width:600px){
+  .menu h1{
+    display:none;
+  }
+}
 @media (max-width:500px){
   .buttons-flex{
     position: unset;
@@ -99,9 +106,6 @@ div .title{
   }
 }
 @media (max-width:450px){
-  .menu h1{
-    display:none;
-  }
   .container {
     width: 82%;
     height: 78%;
@@ -199,6 +203,20 @@ input:focus{
   color: #c259f3;
   text-align: left;
   width:80%;
+}
+
+#minimizeandrestore {
+  display: none;
+  position: relative;
+  top: 80%;
+  cursor:pointer;
+}
+#minimizeandrestore h5 {
+  color: rgb(254, 121, 33);
+  position: fixed;
+  bottom: 12px;
+  width: 90%;
+  text-align: left;
 }
 /* cyrillic-ext */
 @font-face {

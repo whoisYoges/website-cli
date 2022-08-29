@@ -16,7 +16,13 @@ app.addEventListener("click", function(event){
   input.focus();
 })
 
+function clear() {
+  document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
+  document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+}
+
 function help() {
+  clear();
   createText("Type <span class='blue'>ls</span> to see all available commands.<br> Or type <span class='blue'>ls -l</span> to see a list of available commands with their short description.<br>Remember that all the commands are case sensitive.");
 }
 
@@ -63,8 +69,7 @@ async function getInputValue(){
     createText("I am just a regular everyday normal guy.")
   }
   else if(value === "clear"){
-    document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
-    document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+    clear();
   }
   else if(value === "codeberg"){
     trueValue(value);
@@ -181,23 +186,42 @@ function createCode(code, text){
 function maximizeapp() {
   var div1 = document.getElementById("container");
   if (div1.style.width != "100%") {
-      w = div1.style.width;
-      h = div1.style.height;
+      wo = div1.style.width;
+      ho = div1.style.height;
       div1.style.width = "100%";
       div1.style.height = "100%";
   }
   else
       {
-          div1.style.width = w;
-          div1.style.height = h;
+          div1.style.width = wo;
+          div1.style.height = ho;
       }
   return false;
 }
 
 function closeapp() {
   var div1 = document.getElementById("container");
+  var div2 = document.getElementById("minimizeandrestore");
   div1.style.display = "none";
+  div2.style.display = "none";
   return false;
 }
 
+function minimizeAndRestoreApp() {
+  var div1 = document.getElementById("container");
+  var div2 = document.getElementById("minimizeandrestore");
+  w = div1.style.width;
+  h = div1.style.height;
+  if (div1.style.display != "none") {
+    div1.style.display = "none";
+    div2.style.display = "contents";
+  }
+  else {
+    div1.style.display = "flex";
+    div2.style.display = "none";
+    div1.style.width = w;
+    div1.style.height = h;
+  }
+  return false;
+}
 open_terminal();

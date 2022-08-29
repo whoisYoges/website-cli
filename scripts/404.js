@@ -145,5 +145,21 @@ function closeapp() {
   div1.style.display = "none";
   return false;
 }
-
+function minimizeAndRestoreApp() {
+  var div1 = document.getElementById("container");
+  var div2 = document.getElementById("minimizeandrestore");
+  w = div1.style.width;
+  h = div1.style.height;
+  if (div1.style.display != "none") {
+    div1.style.display = "none";
+    div2.style.display = "contents";
+  }
+  else {
+    div1.style.display = "flex";
+    div2.style.display = "none";
+    div1.style.width = w;
+    div1.style.height = h;
+  }
+  return false;
+}
 open_terminal();
