@@ -20,7 +20,7 @@ async function open_terminal(){
   await delay(350);
   createText("<h1 class='redfg'>Error 404</h1><p>The requested page couldn't be found.<br>The page might have been removed or is temporarily unavailable.</p>");
   await delay(700);
-  createText("Type <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.");
+  createText("Type <span class='blue'>cd</span> or <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.");
   new_line();
 }
 
@@ -38,7 +38,8 @@ function new_line(){
   const div = document.createElement("div");
   div.setAttribute("class", "type")
   const i = document.createElement("i");
-  i.setAttribute("class", "fa-solid fa-angles-right icone")
+  i.setAttribute("class", "icone")
+  i.textContent = ">>";
   const input = document.createElement("input");
   div.appendChild(i);
   div.appendChild(input);
@@ -52,18 +53,24 @@ function removeInput(){
 }
 
 async function getInputValue(){
-  const value = document.querySelector("input").value;
+  const value = document.querySelector("input").value.replace(/\s+/g, ' ').trim();
   if(value === "cd $HOME"){
     trueValue(value);
     createText("Returning home...")
     await delay(750);
-    window.location.replace("https://whoisyoges.eu.org");
+    window.location.replace("/");
+  }
+  else if(value === "cd"){
+    trueValue(value);
+    createText("Returning home...")
+    await delay(750);
+    window.location.replace("/");
   }
   else if(value === "cd ~"){
     trueValue(value);
     createText("Returning home...")
     await delay(750);
-    window.location.replace("https://whoisyoges.eu.org");
+    window.location.replace("/");
   }
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
@@ -80,7 +87,7 @@ async function getInputValue(){
   }
   else{
     falseValue(value);
-    createText(`${value}: command not found.<br>Type <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.`)
+    createText(`${value}: command not found.<br>Type <span class='blue'>cd</span> or <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.`)
   }
 }
 
@@ -88,7 +95,8 @@ function trueValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
   const i = document.createElement("i");
-  i.setAttribute("class", "fa-solid fa-angles-right icone")
+  i.setAttribute("class", "icone");
+  i.textContent = ">>";
   const errormessage = document.createElement("h2");
   errormessage.setAttribute("class", "sucess")
   errormessage.textContent = `${value}`;
@@ -101,7 +109,8 @@ function falseValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
   const i = document.createElement("i");
-  i.setAttribute("class", "fa-solid fa-angles-right icone error")
+  i.textContent = ">>";
+  i.setAttribute("class", "icone error")
   const errormessage = document.createElement("h2");
   errormessage.setAttribute("class", "error")
   errormessage.textContent = `${value}`;
