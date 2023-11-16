@@ -66,8 +66,7 @@ async function getInputValue() {
     const value = document.querySelector("input").value.replace(/\s+/g, ' ').trim();
     if (value === "about") {
         trueValue(value);
-        createText("Hi, I am Castor, a Linux enthusiast, FOSS/FLOSS advocate, digital privacy and freedom proponent, and a self-taught frontend designer and developer.");
-        createText("I am just a regular everyday normal guy who loves computers.");
+        createText("Hi, I am Castor (Yogesh Lamichhane), a Versatile IT Professional with expertise in Linux server administration, technical support, and a robust skill set encompassing various tools and technologies. Seeking opportunities to leverage problem-solving, communication, and leadership abilities across diverse roles including Linux Server Admin, DevOps Engineer, IT Specialist, Support Specialist, or IT Head.");
     } else if (value === "clear") {
         clear();
     } else if (value === "codeberg") {

@@ -72,6 +72,12 @@ async function getInputValue(){
     await delay(750);
     window.location.replace("/");
   }
+  else if(value === "cd ~/"){
+    trueValue(value);
+    createText("Returning home...")
+    await delay(750);
+    window.location.replace("/");
+  }
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
@@ -87,7 +93,7 @@ async function getInputValue(){
   }
   else{
     falseValue(value);
-    createText(`${value}: command not found.<br>Type <span class='blue'>cd</span> or <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> to return to the main website.<br>Remember that the commands are case sensitive.`)
+    createText(`${value}: command not found.<br>Type <span class='blue'>cd</span> or <span class='blue'>cd $HOME</span> or <span class='blue'>cd ~</span> or <span class='blue'>cd ~/</span> to return to the main website.<br>Remember that the commands are case sensitive.`)
   }
 }
 
