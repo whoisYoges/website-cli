@@ -37,7 +37,7 @@ function new_line(){
   app.appendChild(p);
   const div = document.createElement("div");
   div.setAttribute("class", "type")
-  const i = document.createElement("i");
+  const i = document.createElement("strong");
   i.setAttribute("class", "icone")
   i.textContent = ">>";
   const input = document.createElement("input");
@@ -100,7 +100,7 @@ async function getInputValue(){
 function trueValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
-  const i = document.createElement("i");
+  const i = document.createElement("strong");
   i.setAttribute("class", "icone");
   i.textContent = ">>";
   const errormessage = document.createElement("h2");
@@ -114,7 +114,7 @@ function trueValue(value){
 function falseValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
-  const i = document.createElement("i");
+  const i = document.createElement("strong");
   i.textContent = ">>";
   i.setAttribute("class", "icone error")
   const errormessage = document.createElement("h2");
@@ -135,7 +135,7 @@ function createCode(code, text){
   const p = document.createElement("p");
   p.setAttribute("class", "code");
   p.innerHTML =
- `${code} <br/><span class='text'> ${text} </span>`;
+  `${code} <br/><span class='text'> ${text} </span>`;
   app.appendChild(p);
 }
 
