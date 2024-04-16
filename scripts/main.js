@@ -22,8 +22,7 @@ function clear() {
 }
 
 function help() {
-    clear();
-    createText("Type <span class='blue'>ls</span> to see all available commands.<br> Or type <span class='blue'>ls -l</span> to see a list of available commands with their short description.");
+    createText("Available commands: <span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>donate</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>gui</span>, <span class='blue'>help</span>, <span class='blue'>ls</span>, <span class='blue'>ls -l</span>, <span class='blue'>mastodon</span>, <span class='blue'>resume</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>");
 }
 
 async function open_terminal() {
@@ -47,7 +46,7 @@ function new_line() {
     app.appendChild(p);
     const div = document.createElement("div");
     div.setAttribute("class", "type")
-    const i = document.createElement("i");
+    const i = document.createElement("strong");
     i.setAttribute("class", "icone");
     i.textContent = ">>";
     const input = document.createElement("input");
@@ -66,7 +65,7 @@ async function getInputValue() {
     const value = document.querySelector("input").value.replace(/\s+/g, ' ').trim();
     if (value === "about") {
         trueValue(value);
-        createText("Hi, I am Castor (Yogesh Lamichhane), a Versatile IT Professional with expertise in Linux server administration, technical support, and a robust skill set encompassing various tools and technologies. Seeking opportunities to leverage problem-solving, communication, and leadership abilities across diverse roles including Linux Server Admin, DevOps Engineer, IT Specialist, Support Specialist, or IT Head.");
+        createText("Hi, I am Castor (Yogesh Lamichhane), A seasoned Linux server administration, certified WHM expert, and passionate practitioner about DevOps and Cloud technologies. As an advocate for Linux and FOSS/FLOSS technologies, I'm also committed to safeguarding digital privacy and freedom, all while pursuing frontend designing and development through self-learning.");
     } else if (value === "clear") {
         clear();
     } else if (value === "codeberg") {
@@ -106,7 +105,7 @@ async function getInputValue() {
         help();
     } else if (value === "ls") {
         trueValue(value);
-        createText("Available commands: <br><span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>donate</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>gui</span>, <span class='blue'>help</span>, <span class='blue'>ls</span>, <span class='blue'>ls -l</span>, <span class='blue'>mastodon</span>, <span class='blue'>resume</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>");
+        createText("Available commands: <br><span class='blue'>about</span> <br><span class='blue'>clear</span> <br><span class='blue'>codeberg</span> <br><span class='blue'>cv</span> <br><span class='blue'>date</span> <br><span class='blue'>donate</span> <br><span class='blue'>email</span> <br><span class='blue'>exit</span> <br><span class='blue'>github</span> <br><span class='blue'>gui</span> <br><span class='blue'>help</span> <br><span class='blue'>ls</span> <br><span class='blue'>ls -l</span> <br><span class='blue'>mastodon</span> <br><span class='blue'>resume</span> <br><span class='blue'>twitter</span> <br><span class='blue'>whoami</span> <br><span class='blue'>youtube</span>");
     } else if (value === "ls -l") {
         trueValue(value);
         createText("Available commands with description: <br> <p class='lsall'><span class='blue lstitle'>about </span> <span class='desc'> short about myself </span> </p>  <p class='lsall'><span class='blue lstitle'>clear </span>  <span class='desc'> clear the terminal screen </span> </p>  <p class='lsall'><span class='blue lstitle'>codeberg </span>  <span class='desc'> link to my codeberg git profile </span> </p> <p class='lsall'><span class='blue lstitle'>cv </span>  <span class='desc'> link to my cv </span> </p> <p class='lsall'><span class='blue lstitle'>date </span>  <span class='desc'> current date </span> </p> <p class='lsall'><span class='blue lstitle'>donate </span>  <span class='desc'> donate to castor </span> </p> <p class='lsall'><span class='blue lstitle'>email </span>  <span class='desc'> email address to contact me </span> </p> <p class='lsall'><span class='blue lstitle'>exit </span>  <span class='desc'> exit from the terminal </span> </p> <p class='lsall'><span class='blue lstitle'>github </span>  <span class='desc'> link to my github profile </span> </p> <p class='lsall'><span class='blue lstitle'>gui </span>  <span class='desc'> link to my gui (normal) website </span> </p> <p class='lsall'><span class='blue lstitle'>help </span>  <span class='desc'> show help text to get started with this site </span> </p> <p class='lsall'><span class='blue lstitle'>ls </span>  <span class='desc'> list all the available commands in this site </span> </p> <p class='lsall'><span class='blue lstitle'>mastodon </span>  <span class='desc'> link to my mastodon profile </span> </p> <p class='lsall'><span class='blue lstitle'>resume </span>  <span class='desc'> link to my resume </span> </p> <p class='lsall'><span class='blue lstitle'>twitter </span>  <span class='desc'> link to my twitter profile </span> </p> <p class='lsall'><span class='blue lstitle'>whoami </span>  <span class='desc'> who are you? </span> </p> <p class='lsall'><span class='blue lstitle'>youtube </span>  <span class='desc'> link to my youtube profile");
@@ -140,7 +139,7 @@ async function getInputValue() {
 function trueValue(value) {
     const div = document.createElement("section");
     div.setAttribute("class", "type2")
-    const i = document.createElement("i");
+    const i = document.createElement("strong");
     i.setAttribute("class", "icone");
     i.textContent = ">>";
     const errormessage = document.createElement("h2");
@@ -154,7 +153,7 @@ function trueValue(value) {
 function falseValue(value) {
     const div = document.createElement("section");
     div.setAttribute("class", "type2")
-    const i = document.createElement("i");
+    const i = document.createElement("strong");
     i.setAttribute("class", "icone error");
     i.textContent = ">>";
     const errormessage = document.createElement("h2");
