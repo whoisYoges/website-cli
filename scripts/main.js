@@ -22,7 +22,7 @@ function clear() {
 }
 
 function help() {
-    createText("Available commands: <span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>cv</span>, <span class='blue'>date</span>, <span class='blue'>donate</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>gui</span>, <span class='blue'>help</span>, <span class='blue'>ls</span>, <span class='blue'>ls -l</span>, <span class='blue'>mastodon</span>, <span class='blue'>resume</span>, <span class='blue'>sourcehut</span>, <span class='blue'>sourcecode</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>");
+    createText("Available commands: <span class='blue'>about</span>, <span class='blue'>clear</span>, <span class='blue'>codeberg</span>, <span class='blue'>date</span>, <span class='blue'>donate</span>, <span class='blue'>email</span>, <span class='blue'>exit</span>, <span class='blue'>github</span>, <span class='blue'>guestbook</span>, <span class='blue'>gui</span>, <span class='blue'>help</span>, <span class='blue'>ls</span>, <span class='blue'>ls -l</span>, <span class='blue'>mastodon</span>, <span class='blue'>pwd</span>, <span class='blue'>resume</span>, <span class='blue'>sourcehut</span>, <span class='blue'>sourcecode</span>, <span class='blue'>twitter</span>, <span class='blue'>whoami</span>, <span class='blue'>youtube</span>");
 }
 
 async function open_terminal() {
@@ -72,10 +72,6 @@ async function getInputValue() {
         trueValue(value);
         createText("<a href='https://codeberg.org/whoisYoges' target='_blank' rel='noopener noreferrer'> codeberg.org/whoisYoges</a>");
         window.open('https://codeberg.org/whoisYoges', '_blank');
-    } else if (value === "cv") {
-        trueValue(value);
-        window.open('/castor_resume.pdf', '_blank');
-        createText("<a href='/castor_resume.pdf' target='_blank' rel='noopener noreferrer'> castor_resume.pdf</a>")
     } else if (value === "date") {
         trueValue(value);
         currentdate = Date();
@@ -96,6 +92,10 @@ async function getInputValue() {
         trueValue(value);
         window.open('https://github.com/whoisYoges', '_blank');
         createText("<a href='https://github.com/whoisYoges' target='_blank' rel='noopener noreferrer'> github.com/whoisYoges</a>")
+    } else if (value === "guestbook") {
+        trueValue(value);
+        window.open('https://guestbook.yogeshlamichhane.com.np/', '_blank');
+        createText("<a href='https://guestbook.yogeshlamichhane.com.np/' target='_blank' rel='noopener noreferrer'> https://guestbook.yogeshlamichhane.com.np</a>")
     } else if (value === "gui") {
         trueValue(value);
         window.open('https://castorisdead.xyz', '_blank');
@@ -105,14 +105,17 @@ async function getInputValue() {
         help();
     } else if (value === "ls") {
         trueValue(value);
-        createText("Available commands: <br><span class='blue'>about</span> <br><span class='blue'>clear</span> <br><span class='blue'>codeberg</span> <br><span class='blue'>cv</span> <br><span class='blue'>date</span> <br><span class='blue'>donate</span> <br><span class='blue'>email</span> <br><span class='blue'>exit</span> <br><span class='blue'>github</span> <br><span class='blue'>gui</span> <br><span class='blue'>help</span> <br><span class='blue'>ls</span> <br><span class='blue'>ls -l</span> <br><span class='blue'>mastodon</span> <br><span class='blue'>resume</span> <br><span class='blue'>sourcehut</span> <br><span class='blue'>sourcecode</span> <br><span class='blue'>twitter</span> <br><span class='blue'>whoami</span> <br><span class='blue'>youtube</span>");
+        createText("Available commands: <br><span class='blue'>about</span> <br><span class='blue'>clear</span> <br><span class='blue'>codeberg</span> <br><span class='blue'>date</span> <br><span class='blue'>donate</span> <br><span class='blue'>email</span> <br><span class='blue'>exit</span> <br><span class='blue'>github</span> <br><span class='blue'>guestbook</span> <br><span class='blue'>gui</span> <br><span class='blue'>help</span> <br><span class='blue'>ls</span> <br><span class='blue'>ls -l</span> <br><span class='blue'>mastodon</span> <br><span class='blue'>pwd</span> <br><span class='blue'>resume</span> <br><span class='blue'>sourcehut</span> <br><span class='blue'>sourcecode</span> <br><span class='blue'>twitter</span> <br><span class='blue'>whoami</span> <br><span class='blue'>youtube</span>");
     } else if (value === "ls -l") {
         trueValue(value);
-        createText("Available commands with description: <br> <p class='lsall'><span class='blue lstitle'>about </span> <span class='desc'> short about myself </span> </p>  <p class='lsall'><span class='blue lstitle'>clear </span>  <span class='desc'> clear the terminal screen </span> </p>  <p class='lsall'><span class='blue lstitle'>codeberg </span>  <span class='desc'> link to my codeberg git profile </span> </p> <p class='lsall'><span class='blue lstitle'>cv </span>  <span class='desc'> link to my cv </span> </p> <p class='lsall'><span class='blue lstitle'>date </span>  <span class='desc'> current date </span> </p> <p class='lsall'><span class='blue lstitle'>donate </span>  <span class='desc'> help me keep this website ad-free </span> </p> <p class='lsall'><span class='blue lstitle'>email </span>  <span class='desc'> email address to contact me </span> </p> <p class='lsall'><span class='blue lstitle'>exit </span>  <span class='desc'> exit from the terminal </span> </p> <p class='lsall'><span class='blue lstitle'>github </span>  <span class='desc'> link to my github profile </span> </p> <p class='lsall'><span class='blue lstitle'>gui </span>  <span class='desc'> link to my gui (normal) website </span> </p> <p class='lsall'><span class='blue lstitle'>help </span>  <span class='desc'> show help text to get started with this site </span> </p> <p class='lsall'><span class='blue lstitle'>ls </span>  <span class='desc'> list all the available commands in this site </span> </p> <p class='lsall'><span class='blue lstitle'>mastodon </span>  <span class='desc'> link to my mastodon profile </span> </p> <p class='lsall'><span class='blue lstitle'>resume </span>  <span class='desc'> link to my resume </span> </p> <p class='lsall'><span class='blue lstitle'>sourcehut </span>  <span class='desc'> link to my sourcehut profile </span> </p> <p class='lsall'><span class='blue lstitle'>sourcecode </span> <span class='desc'> sourcecode of this website </span> </p> <p class='lsall'><span class='blue lstitle'>twitter </span>  <span class='desc'> link to my twitter profile </span> </p> <p class='lsall'><span class='blue lstitle'>whoami </span>  <span class='desc'> who are you? </span> </p> <p class='lsall'><span class='blue lstitle'>youtube </span>  <span class='desc'> link to my youtube profile");
+        createText("Available commands with description: <br> <p class='lsall'><span class='blue lstitle'>about </span> <span class='desc'> short about myself </span> </p>  <p class='lsall'><span class='blue lstitle'>clear </span>  <span class='desc'> clear the terminal screen </span> </p>  <p class='lsall'><span class='blue lstitle'>codeberg </span>  <span class='desc'> link to my codeberg git profile </span> </p> <p class='lsall'><span class='blue lstitle'>date </span>  <span class='desc'> current date </span> </p> <p class='lsall'><span class='blue lstitle'>donate </span>  <span class='desc'> help me keep this website ad-free </span> </p> <p class='lsall'><span class='blue lstitle'>email </span>  <span class='desc'> email address to contact me </span> </p> <p class='lsall'><span class='blue lstitle'>exit </span>  <span class='desc'> exit from the terminal </span> </p> <p class='lsall'><span class='blue lstitle'>github </span>  <span class='desc'> link to my github profile </span> </p> <p class='lsall'><span class='blue lstitle'>guestbook </span>  <span class='desc'> sign my guestbook and let me know how you found this little site in the great ocean of the internet </span> </p> <p class='lsall'><span class='blue lstitle'>gui </span>  <span class='desc'> link to my gui (normal) website </span> </p> <p class='lsall'><span class='blue lstitle'>help </span>  <span class='desc'> show help text to get started with this site </span> </p> <p class='lsall'><span class='blue lstitle'>ls </span>  <span class='desc'> list all the available commands in this site </span> </p> <p class='lsall'><span class='blue lstitle'>mastodon </span>  <span class='desc'> link to my mastodon profile </span> </p> <p class='lsall'><span class='blue lstitle'>pwd </span>  <span class='desc'> my current directory </span> </p> <p class='lsall'><span class='blue lstitle'>resume </span>  <span class='desc'> link to my resume </span> </p> <p class='lsall'><span class='blue lstitle'>sourcehut </span>  <span class='desc'> link to my sourcehut profile </span> </p> <p class='lsall'><span class='blue lstitle'>sourcecode </span> <span class='desc'> sourcecode of this website </span> </p> <p class='lsall'><span class='blue lstitle'>twitter </span>  <span class='desc'> link to my twitter profile </span> </p> <p class='lsall'><span class='blue lstitle'>whoami </span>  <span class='desc'> who are you? </span> </p> <p class='lsall'><span class='blue lstitle'>youtube </span>  <span class='desc'> link to my youtube profile");
     } else if (value === "mastodon") {
         trueValue(value);
         window.open('https://fosstodon.org/@whoisyoges', '_blank');
         createText("<a href='https://fosstodon.org/@whoisyoges' target='_blank' rel='noopener noreferrer'> fosstodon.org/@whoisyoges</a>")
+    } else if (value === "pwd") {
+        trueValue(value);
+        createText(`/home/castor`)
     } else if (value === "resume") {
         trueValue(value);
         window.open('/castor_resume.pdf', '_blank');
