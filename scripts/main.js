@@ -118,8 +118,8 @@ async function getInputValue() {
         createText(`/home/castor`)
     } else if (value === "resume") {
         trueValue(value);
-        window.open('/castor_resume.pdf', '_blank');
-        createText("<a href='/castor_resume.pdf' target='_blank' rel='noopener noreferrer'> castor_resume.pdf</a>")
+        window.open('https://resume.yogeshlamichhane.com.np/castor-resume.pdf', '_blank');
+        createText("<a href='https://resume.yogeshlamichhane.com.np/castor-resume.pdf' target='_blank' rel='noopener noreferrer'> castor_resume.pdf</a>")
     } else if (value === "sourcehut") {
         trueValue(value);
         window.open('https://git.sr.ht/~whoisyoges', '_blank');
