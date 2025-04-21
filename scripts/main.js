@@ -65,7 +65,7 @@ async function getInputValue() {
     const value = document.querySelector("input").value.replace(/\s+/g, ' ').trim();
     if (value === "about") {
         trueValue(value);
-        createText("Hi, I am Castor (Yogesh Lamichhane), A seasoned Linux server administration, certified WHM expert, and passionate practitioner about DevOps and Cloud technologies. As an advocate for Linux and FOSS/FLOSS technologies, I'm also committed to safeguarding digital privacy and freedom, all while pursuing frontend designing and development through self-learning.");
+        createText("Hi, I am Castor, a Linux Sysadmin and DevOps Engineer who is fascinated with servers and *nix systems. I'm a passionate advocate for Linux and open-source software, with a strong belief in the power of community-driven tech. Outside of that, I occasionally dive into front-end design and development as a creative outlet.");
     } else if (value === "clear") {
         clear();
     } else if (value === "codeberg") {
@@ -115,7 +115,7 @@ async function getInputValue() {
         createText("<a href='https://fosstodon.org/@whoisyoges' target='_blank' rel='noopener noreferrer'> fosstodon.org/@whoisyoges</a>")
     } else if (value === "pwd") {
         trueValue(value);
-        createText(`/home/castor`)
+        createText(`/home/guest`)
     } else if (value === "resume") {
         trueValue(value);
         window.open('https://resume.yogeshlamichhane.com.np/castor-resume.pdf', '_blank');
